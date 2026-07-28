@@ -25,6 +25,9 @@ scaffold_msaccess.exe --db **C:\Users\Downloads\access_database.accdb**
 
 scaffold_msaccess.exe is packaged application by Github actions with Python and above dependencies. It is safe to use since built with Github.
 
+
+# Running result
+
 The above command will show you the results. For example, for the below video, the result is:
 
 ```
@@ -81,8 +84,11 @@ The above command will show you the results. For example, for the below video, t
   • Work (1): WorkType
 ```
 
-That is effectively the Web application which enables you a complete interaction with your data - Create, Update and Delete.
-This application will show a Menu for Asset, Audit, etc - with corresponding  tables. There is no Menu for a single table.
+The above is effectively the Web application which enables you a complete interaction with your data - Create, Update and Delete.
+
+This particular application will show a Menu for Asset, Audit, etc - with corresponding  tables. There is no Menu for a single table.
+
+If the result shows no tables, it is impossible to show any data on the Web.
 
 
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
@@ -127,3 +133,5 @@ Contact if:
 - cannot migrate easily
 - fear rewriting everything
 - need MS Access data on the Web
+
+
