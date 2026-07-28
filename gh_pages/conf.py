@@ -4,7 +4,7 @@ html_additional_pages = {
     'features': 'features.html',
     'stories': 'stories.html',
 }
-html_favicon = './favicon.ico'
+html_favicon = '_templates/favicon-32x32.png'
 templates_path = ['_templates']
 source_suffix = ['.txt']
 master_doc = 'contents'
