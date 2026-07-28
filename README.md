@@ -50,45 +50,15 @@ The above command will show you the results. For example, for the below video, t
   • Detail (1): DetailJournaltype
   • Device (3): Device, DeviceHistory, DeviceType
   • Domain (1): Domain
-  • Employe (4): Employe, EmployeHistory, EmployeHistoryDetail, EmployeLoanDistribution
-  • Entry (2): Entry, EntryDetail
-  • Fin (1): FinYear
-  • Geo (1): GeoSector
-  • Group (1): GroupItem
-  • Inventory (4): InventoryTRX, InventoryTRXDetail, InventoryTRXDetailDistribution, InventoryTrxType
-  • Item (5): Item, ItemDetail, ItemType, ItemUom, item_migrated
-  • Location (1): LOCATION
-  • Main (2): MainCode, MainJournalType
-  • Nature (1): Nature
-  • Order (2): Order, OrderDetail
-  • Over (2): OverTimeDetail, OverTimeRate
-  • Period (1): Period
-  • Po (1): PosBatch
-  • Product (1): Product
-  • Project (2): Project, ProjectType
-  • Properity (1): Properity
-  • Resource (2): Resource, ResourceType
-  • Salary (3): SalaryPeriod, SalaryTRX, SalaryTrxType
-  • Sale (3): SalesMan, SalesOrder, SalesOrderDetail
-  • Section (1): Section
-  • Sheet (1): Sheet
-  • Stock (3): StockReview, StockReviewDetail, StockReviewType
-  • Store (2): Store, StoreLocation
-  • Sub (5): SubCode, SubGroupItem, SubJournalType, SubLocation, SubStore
-  • Supplier (1): Supplier
-  • Survey (5): Survey, SurveyGrade, SurveyQuestion, SurveyResult, SurveyResultDetail
-  • System (1): SystemParameter
-  • T (4): TMPAuditAccount, TMPAuditChart, TMPAuditDevice, TMPAuditUsers
-  • Trx (1): TrxType
-  • User (2): USERS, Users1
-  • Work (1): WorkType
+  • etc...
+
 ```
 
 The above is effectively the Web application which enables you a complete interaction with your data - Create, Update and Delete.
 
 This particular application will show a Menu for Asset, Audit, etc - with corresponding  tables. There is no Menu for a single table.
 
-If the result shows no tables, it is impossible to show any data on the Web.
+**If the result shows no tables, it is impossible to show any data on the Web.**
 
 
 [![alt text](https://github.com/platipusica/msaccess2web/blob/main/output.gif?raw=true)](https://raw.githubusercontent.com/platipusica/msaccess2web/refs/heads/main/output.gif)
