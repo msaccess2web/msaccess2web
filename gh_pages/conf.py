@@ -8,7 +8,7 @@ templates_path = ['_templates']
 source_suffix = ['.txt']
 master_doc = 'contents'
 project = u'Jam.py'
-copyright = u'2022, Jam.py Team'
+copyright = u'2026, Jam.py Team'
 language = "en"
 exclude_patterns = [
     '_build',
