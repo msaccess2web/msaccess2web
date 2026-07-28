@@ -8,8 +8,29 @@ import os
 import argparse
 from collections import defaultdict
 import re
-from textblob import Word
+# from textblob import Word
 import pyodbc
+# import tkinter as tk
+# from tkinter import filedialog, scrolledtext, messagebox
+from datetime import datetime
+
+
+import sys
+import types
+
+typeguard = types.ModuleType("typeguard")
+
+def typechecked(func=None, *args, **kwargs):
+    if func is None:
+        return lambda f: f
+    return func
+
+typeguard.typechecked = typechecked
+sys.modules["typeguard"] = typeguard
+
+
+import inflect
+
 
 # Global placeholder
 args = None
@@ -56,17 +77,23 @@ FIELD_TYPES = {
     IMAGE: 'TEXT'
 }
 
+# def normalize_plural(word):
+#     word = word.lower()
+#     if word.endswith('ies'):
+#         return word[:-3] + 'y'
+# #    elif word.endswith('es'):
+# #        return word[:-2]
+#     elif word.endswith('s'):
+#         return word[:-1]
+#     return word
+# def normalize_plural(word):
+#     return Word(word.lower()).singularize()
+
+p = inflect.engine()
+
 def normalize_plural(word):
-    word = word.lower()
-    if word.endswith('ies'):
-        return word[:-3] + 'y'
-#    elif word.endswith('es'):
-#        return word[:-2]
-    elif word.endswith('s'):
-        return word[:-1]
-    return word
-def normalize_plural(word):
-    return Word(word.lower()).singularize()
+    singular = p.singular_noun(word)
+    return singular if singular else word.lower()
 
 def get_group_key(suffix, known_roots):
     # === NEW: Handle ALLCAPS directly ===
@@ -247,6 +274,24 @@ def get_database_path():
     return db_path
 
 def connect_to_database(db_path):
+    if db_path is None:
+        # Create a root Tkinter window and hide it
+        root = Tk()
+        root.withdraw()
+
+        # Show the file picker dialog
+        # You can filter to show only Access files
+        file_path = filedialog.askopenfilename(
+            title="Select an Access Database",
+            filetypes=[("Access Databases", "*.mdb *.accdb"), ("All Files", "*.*")]
+        )
+        root.destroy() # Close the root window
+
+        if not file_path:
+            print("No file selected.")
+            return None
+        db_path = file_path
+
     try:
         conn_str = (
             r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};'

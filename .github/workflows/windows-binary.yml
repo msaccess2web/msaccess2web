@@ -24,20 +24,20 @@ jobs:
         python-version: '3.11'
         architecture: 'x64'
     
-    - name: Install dependencies and download corpora
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyodbc sqlparse textblob
-        python download_corpora.py
+        pip install pyodbc sqlparse nltk inflect
+        python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
     
     - name: Build Windows Executable
       shell: pwsh
       run: |
-        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --include-package=textblob --include-package=nltk --include-package-data=sqlparse --include-package-data=pyodbc --include-package-data=textblob --nofollow-import-to=unittest --nofollow-import-to=pytest --nofollow-import-to=setuptools --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
+        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --include-package=nltk --include-package-data=sqlparse --include-package-data=pyodbc --include-package-data=textblob --nofollow-import-to=unittest --nofollow-import-to=pytest --nofollow-import-to=setuptools --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ScaffoldDB-Windows
+        name: scaffold_msaccess_win_x64
         path: build/scaffold_msaccess.exe
         if-no-files-found: error

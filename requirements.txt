@@ -1,3 +1,4 @@
- pyodbc
- textblob
- sqlparse
+pyodbc
+textblob
+sqlparse
+inflect
