@@ -1,8 +1,8 @@
-name: Build Windows Executable
+ame: Build Windows Executable
 
 on:
   push:
-    branches: [ main ]
+#    branches: [ main ]
     tags:
       - '*'
   workflow_dispatch:
@@ -24,20 +24,19 @@ jobs:
         python-version: '3.11'
         architecture: 'x64'
     
-    - name: Install dependencies
+    - name: Install dependencies and download corpora
       run: |
         python -m pip install --upgrade pip
-        pip install pyodbc sqlparse nltk inflect
-        python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
+        pip install pyodbc sqlparse textblob
     
     - name: Build Windows Executable
       shell: pwsh
       run: |
-        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --include-package=nltk --include-package-data=sqlparse --include-package-data=pyodbc --include-package-data=textblob --nofollow-import-to=unittest --nofollow-import-to=pytest --nofollow-import-to=setuptools --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
+        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: scaffold_msaccess_win_x64
+        name: scaffold_msaccess_windows_x86_64
         path: build/scaffold_msaccess.exe
         if-no-files-found: error

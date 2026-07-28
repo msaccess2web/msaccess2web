@@ -1,4 +1,6 @@
+nuitka
 pyodbc
 textblob
 sqlparse
 inflect
+typeguard<4
