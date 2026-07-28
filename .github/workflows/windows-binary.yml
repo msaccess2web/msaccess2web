@@ -24,15 +24,17 @@ jobs:
         python-version: '3.11'
         architecture: 'x64'
     
-    - name: Install dependencies and download corpora
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install nuitka pyodbc sqlparse textblob
     
     - name: Build Windows Executable
       shell: pwsh
+      env:
+        NUITKA_DEPENDENCY_WALKER: yes
       run: |
-        python -m nuitka --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
+        python -m nuitka --assume-yes-for-downloads  --standalone --onefile --msvc=latest --enable-plugin=anti-bloat --output-dir=build --output-filename=scaffold_msaccess.exe scaffold_msaccess.py
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
