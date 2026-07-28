@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies and download corpora
       run: |
         python -m pip install --upgrade pip
-        pip nuitka install pyodbc sqlparse textblob
+        pip install nuitka pyodbc sqlparse textblob
     
     - name: Build Windows Executable
       shell: pwsh
