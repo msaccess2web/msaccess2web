@@ -440,7 +440,7 @@ def my_database_procedure(db_info, connection):
             pk = col['pk']
             
 
-            f_field_name = sanitize_field_name(to_camel_case(col_name))
+            f_field_name = sanitize_js_name(sanitize_field_name(to_camel_case(col_name)))
             f_name = to_caption(col_name)
             f_data_type = get_f_data_type(col_type, col_name)
             f_size = get_f_size(col_type, col_name)
