@@ -94,23 +94,37 @@ p = inflect.engine()
 def normalize_plural(word):
     singular = p.singular_noun(word)
     return singular if singular else word.lower()
+def normalize_plural(word):
+    # Do not singularize acronyms
+    if word.isupper():
+        return word.lower()
+
+    singular = p.singular_noun(word)
+    return singular if singular else word.lower()    
 
 def get_group_key(suffix, known_roots):
-    # === NEW: Handle ALLCAPS directly ===
     if suffix.isupper():
-        root = normalize_plural(suffix)
-        return root.capitalize()
+        return normalize_plural(suffix).capitalize()
 
-    # Normal camelCase or snake_case
-    parts = re.findall(r'[A-Z][a-z]*|[a-z]+', suffix)
+    parts = re.findall(
+        r'[A-Z]+(?=[A-Z][a-z]|$)|[A-Z]?[a-z]+',
+        suffix
+    )
+
     if parts:
-        root = normalize_plural(parts[0])
+        if len(parts) > 1 and parts[0].isupper():
+            root = parts[0] + parts[1]
+        else:
+            root = parts[0]
+
+        root = normalize_plural(root)
+
         for known in known_roots:
             if normalize_plural(known.lower()) == root:
                 return known.title()
+
         return root.title()
 
-    # Fallback
     return suffix.title()
 
 
@@ -134,6 +148,14 @@ def group_by_suffix(tables, prefix=''):
 def sanitize_field_name(name):
     return name + "_f" if name in RESERVED_FIELD_NAMES else name
 
+def sanitize_js_name(name):
+    # Replace anything that is not JS identifier-friendly
+    name = re.sub(r'[^a-zA-Z0-9_$]', '_', name)
+
+    # Avoid starting with a number
+    if name and name[0].isdigit():
+        name = '_' + name
+    return name
 
 def get_table_info(conn, table_name):
     conn.setdecoding(pyodbc.SQL_WCHAR, encoding='latin-1')
@@ -151,7 +173,7 @@ def get_table_info(conn, table_name):
         nullable = col.nullable == 1
 
         is_pk = False
-        if col_name and col_name.upper() == "ID":
+        if col_name and col_name.upper() == "ID" or col_name.endswith("ID"):
             is_pk = True
             has_id_column = True
 
@@ -319,7 +341,7 @@ def my_database_procedure(db_info, connection):
     cursor = conn.cursor()
 
     cursor.execute("UPDATE SYS_PARAMS SET F_LANGUAGE=1")
-    cursor.execute("UPDATE SYS_TASKS SET F_DB_TYPE=1, F_ALIAS=?, F_NAME='demo', F_ITEM_NAME='demo'", (db_file,))
+    cursor.execute("UPDATE SYS_TASKS SET F_DB_TYPE=9, F_ALIAS=?, F_NAME='demo', F_ITEM_NAME='demo'", (db_file,))
     cursor.execute("UPDATE SYS_ITEMS SET F_NAME =?, F_ITEM_NAME=?, F_JS_FILENAME=? WHERE ID=1", ('demo', 'demo', 'demo.js'))
 
     item_id = ITEM_START_ID
@@ -372,7 +394,7 @@ def my_database_procedure(db_info, connection):
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             group_folder_id, DELETED, TASK_ID, 1, 6, 1, 0,
-            group_name, "g_" + group_name.lower(), None,
+            group_name, "g_" + sanitize_js_name(group_name.lower()), None,
             VISIBLE, None, None
         ))
         #conn.commit()
@@ -387,7 +409,7 @@ def my_database_procedure(db_info, connection):
         parent_id = group_to_folder_id.get(group_name)
 
         f_table_name = table_name
-        f_item_name = table_name.lower()
+        f_item_name = sanitize_js_name(table_name.lower())
         f_name = "_".join(part.capitalize() for part in table_name.replace("DEMO_", "").split("_"))
 
         table_item_id = item_id
