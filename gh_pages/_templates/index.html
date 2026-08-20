@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MS Access2Web | The easiest and fastest MS Access to Web</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="_static/favicon-32x32.png">
+    <!-- <link rel="icon" type="image/x-icon" href="_static/favicon-32x32.png"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+    <!-- <script src="./assets/asciinema-player.min.js""></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/asciinema-player.css" /> -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/asciinema-player@3.17.0/dist/bundle/asciinema-player.css">
+
+<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.17.0/dist/bundle/asciinema-player.min.js"></script>
+<style>
         .hero-gradient {
             background: radial-gradient(circle at top right, #1e293b, #0f172a);
         }
         .code-glow {
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
-    </style>
+</style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
 
@@ -74,22 +80,29 @@
                     <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                     <span class="ml-4 text-xs text-slate-400 font-mono italic">MS Access to Web Demo - Interactive Preview</span>
                 </div>
-                <!-- Simulating a high-quality GIF/Video Placeholder -->
-                <div class="bg-slate-900 p-4 aspect-video flex items-center justify-center relative">
-                    <!-- <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHR4MGR6eW9oN2R6ZWZqem9xNnpqZno0eGd6ZWZqem9xNnpqZno0eGd6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGm8ApxEToHq8/giphy.gif" -->
-					 <img src="https://github.com/jam-py-v7/jam-py-v7/blob/develop/assets/images/JAMPY_Readme.gif?raw=true" alt="Development Demo" class="rounded absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-10 bg-slate-900/80 p-8 rounded-xl border border-blue-500/30 backdrop-blur-md max-w-lg text-left">
-                        <div class="flex gap-4 items-start">
-                            <div class="bg-blue-500/20 p-3 rounded-lg">
-                                <i class="fas fa-bolt text-blue-400 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-blue-400 font-bold text-lg mb-1">Zero to Production in Seconds</h4>
-                                <p class="text-sm text-slate-300">1. Scaffold Application &rarr; 2. Done &rarr; 3. Or customise</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+<div class="aspect-video w-full rounded-xl bg-slate-900">
+    <div id="demo"></div>
+</div>
+
+<script>
+    AsciinemaPlayer.create(
+        './ascii.cast',
+        document.getElementById('demo'),
+        {
+            poster: 'npt:0:11',
+            controls: true,
+            autoplay: true,
+            preload: true,
+            speed: 0.5,
+        }        
+    );
+document.querySelector('.ap-control-bar').style.cssText += `
+    background: red !important;
+    z-index: 99999 !important;
+`;
+</script>
+
             </div>
         </div>
     </header>

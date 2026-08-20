@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
+<meta name=description content="Jam.py is a modern, open source low-code platform for building modern internal applications in minutes.">
+<meta name=keywords content="Low code platform,Custom software,Web application builder,internal tools,internal tool builder">
+<meta itemprop=name content="Jam.py - Internal tools made easy">
+<meta itemprop=description content="Jam.py is an open source low-code platform and the easiest way to build, automate, and ship internal tools. Check it out.">
+<title>Jam.py | Build internal tools in minutes, run any Python code from the Browser input</title>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+<link rel="canonical" href="https://jampyapplicationbuilder.com/" />
+<script src="./assets/js/asciinema-player.min.js""></script>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BVZGENMJJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BVZGENMJJT');
+</script>
+  <meta charset="utf-8">  
+    <title>Jam.py Application Builder </title>
+
+    <link href="index2_files/Core.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/asciinema-player.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Python, JavaScript, JQuery, Bootstrap, framework, open-source, database, SQLCipher, MS Access, migration, Northwind Traders"/>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVZGENMJJT"></script>
+        <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	                 })(window,document,'script','//www.googletagmanager.com/gtag/js?id=G-BVZGENMJJT','ga');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BVZGENMJJT');
+        </script>
+	  <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-122962025-6', 'auto');
+            ga('send', 'pageview');
+         </script>
+
+
+</head>
+<body>
+    <div class="m-Header-Wrapper">
+    <header class="m-Header" id="m_Header">
+        <div class="m-Body-contentWrapper">
+            <div class="m-Header-branding">
+                <a href="index.html" class="m-Header-logo" title="Jam.py Application Builder">
+                    <span class="jam-logo"></span>
+                    <span class="jam-logo-stacked"></span>
+                    <span class="u-VisuallyHidden">Jam.py Business Application Builder</span>
+
+                </a>
+            </div>
+
+
+            <div class="m-Header-actions">
+               <div class="m-Header-lang">
+    <!--for="m_LangSelect"-->
+    <!-- id="m-LangSelect"-->
+    <label  class="m-Header-langLabel">Select Language</label>
+    <select class="m-Header-langSelect">
+        
+            <option value="index.html" selected>
+                English
+            </option>
+
+            <option value="index_fr.html" >
+                Français
+            </option>
+	    
+            <option value="index_es.html" >
+                Español
+            </option>
+
+            <option value="index_pt.html" >
+              Português (Brasil) 
+            </option>
+
+            <option value="index_zh-cn.html" >
+              中文（简体) 
+            </option>
+      
+    </select>
+</div>
+
+
+            </div>
+        </div>
+    </header>
+</div>
+
+
+
+
+    
+<div class="js-getStarted-modal"></div>
+<div class="m-GetStarted-wrap">
+    <button class="js-Cancel-getStarted" type="button">&times;</button>
+<div class="m-Section m-Section--getStarted m-GetStarted">
+  
+  <div class="m-Section-row row">
+    <div class="m-Section-col col col-12">
+      <span class="jam-logo"></span>
+      <h2 class="m-Section-title">Get started with Jam.py Application Builder</h2>
+    </div>
+  </div>
+  <div class="m-Section-row row">
+    <div class="m-Section-col col col-4">
+      <a href="https://github.com/jam-py-v5/jam-py/archive/develop.zip" target="_blank" class="m-ActionBlock" id="download_apex">
+        <div class="m-ActionBlock-wrap">
+          <div class="m-ActionBlock-graphic"><span class="m-ActionBlock-icon download"></span></div>
+          <div class="m-ActionBlock-content">
+            <h3 class="m-ActionBlock-title">Download Jam.py</h3>
+            <p class="m-ActionBlock-desc">Install Jam.py on any platform with Python minimum version 3.7. Minimum space required 18MB. </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="m-Section-col col col-4">
+      <a href="http://northwind.pythonanywhere.com/" class="m-ActionBlock m-ActionBlock--featured" id="free_workspace">
+        <div class="m-ActionBlock-wrap">
+          <div class="m-ActionBlock-graphic"><span class="m-ActionBlock-icon workspace"></span></div>
+          <div class="m-ActionBlock-content">
+            <h3 class="m-ActionBlock-title">Try Demo</h3>
+            <p class="m-ActionBlock-desc">Comprehensive Northwind Traders Demo you can base your next application on.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="m-Section-col col col-4">
+      <a href="https://jampy-docs-v7.readthedocs.io/en/latest/#video-tutorials" target="_blank" class="m-ActionBlock" id="oracle_cloud">
+        <div class="m-ActionBlock-wrap">
+          <div class="m-ActionBlock-graphic"><span class="m-ActionBlock-icon oracle-cloud"></span></div>
+          <div class="m-ActionBlock-content">
+            <h3 class="m-ActionBlock-title">Watch videos</h3>
+            <p class="m-ActionBlock-desc">We prepared a number of tutorials about the Jam.py framework to enable you to learn quickly.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  
+</div>
+
+</div>
+<div class="apex-rds-container" style="display: none;">
+  <ul id="RDS" class="apex-rds">
+      <li class="apex-rds-item">
+    <a href="index.html#cloudhero">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#hero">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Process">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Intro">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Develop">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Design">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Deploy">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_PkgApps">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#oracle">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_LearnMore">
+        <span></span>
+    </a>
+</li>
+      <li class="apex-rds-item">
+    <a href="index.html#m_Closing">
+        <span></span>
+    </a>
+</li>
+  </ul>
+</div>
+
+<div id="cloudhero" class="m-CloudHero apex-bkgd">
+  <div class="m-Body-contentWrapper">
+    <div class="m-CloudHero-content">
+      <div class="m-CloudHero-mobileLogo apex-icon"></div>
+      <div class="m-CloudHero-title">Jam.py Application Builder</div>
+      <div class="m-CloudHero-subTitle">What is Jam.py? Just as MS Access serves desktop environment, Jam.py serves as web application - and much more. Like running any Python script from the Browser input. It's that simple.</div>
+            <button class="m-Button m-Button--hero m-Button--cloudHero">Download HERE, or install with: pip install jam.py-v7</button>
+
+    </div>
+  </div>
+</div>
+
+<div id="m_Tooling" class="m-Section m-Section--grid m-Section--tooling">
+        <h3 class="m-Section-title">Lets see how easy is to "scaffold" a complete Web app:</h3>
+
+              <div class="m-Body-contentWrapper">
+
+                <div id="demo"></div>      
+
+              </div>
+        </div>
+
+
+<script>
+    AsciinemaPlayer.create('/demo03.cast', document.getElementById('demo'), {
+        poster: 'npt:0:11',
+        markers: [
+            [3, 'Create project'],
+            [5, 'Connect to DB'],
+            [7, 'Create Menues'],
+            [9, 'Group tables'],
+            [11, 'Add CSS'],
+        ]
+    });
+</script>
+
+
+<!--      
+    </p><p class="m-Hero-pitch">Check out the Jam.py Admin UI slides!</p></div>
+
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/uvEltQT3E93Gcq" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://goo.gl/j81uDW" title="Python Jam.py Framework Admin User Interface Introduction " target="_blank">Python Jam.py Framework Admin User Interface Introduction </a> </strong></div>
+-->
+    </div>
+  </div>
+  </div>
+<div id="m_Tooling" class="m-Section m-Section--grid m-Section--tooling">
+  <div class="m-Body-contentWrapper subsection-tooling">
+    <div class="m-Section-row row" id="m_Intro">
+      <div class="col col-12 m-Section-col">
+        <h2 class="m-Section-title">Sharing the love</h2>
+	        <p class="m-Section-desc"><a href="https://www.youtube.com/channel/UCpUyN5j555U0J7xoyWGDmJQ">YouTube Channel,</a> <a href="./screenshots/index.html">Screenshots</a> and <a href="https://jampy-docs-v7.readthedocs.io/_/downloads/en/latest/pdf/" download=Jam-py.pdf>User Manual</a>. 
+    Visit <a href="https://jampy-docs-v7.readthedocs.io/">Online documentation</a> or <a href="https://jampy-application-design-tips.readthedocs.io/">Application Design Tips.</a>
+
+The AI LLM files are now released! Download <a href="https://jampy-docs-v7.readthedocs.io/en/latest/llms.txt">llms.txt</a> or <a href="./llms-full.txt">llms-full.txt</a> to try your AI!</a></p>
+
+        <h2 class="m-Section-title">Success Stories</h2>
+	        <p class="m-Section-desc">-<a href="https://web2py.com/">web2py</a> original author <a href="https://www.linkedin.com/in/massimodipierro">Massimo Di Pierro</a> about
+Jam.py: "Jam is a much more sophisticated version of web2py's appadmin, our name for the database UI.
+web2py is not a database UI and the one it exposes is in fact very limited. Jam.py is better at it."
+</p>
+                <p class="m-Section-desc">-<a href="https://www.linux-magazine.com/Issues/2020/241/Jam.py">Linux Magazine</a> author <a href="https://www.linuxjournal.com/users/marco-fioretti">Marco Fioretti</a>: "Jam.py is quick and simple to use, and
+the architecture makes it easy to migrate
+an application to another database if the
+need arises."
+</p>
+        <p class="m-Section-desc">- "I have just spent 30 minutes using jam.py. It is extraordinary and wonderful what you and your team seem to have accomplished.
+To provide some context - I spent 2 hours on <a href="https://en.wikipedia.org/wiki/OpenXava">OpenXava</a>  this morning and could not even get their demo working.
+I was able to set up Jam.py in 5 minutes from the pip install - your doco is great as well." - Jam user.
+</p>
+<p class="m-Section-desc">-<a href="https://opensource.stackexchange.com/users/5827/cannatag">Giovanni Cannata</a> Python <a href="https://pypi.org/project/ldap3/">ldap3</a> author: "I would let you know that I really like jam.py framework and its modular approach allowed me to integrate the application in our systems with no hassles!" </p>
+<p class="m-Section-desc">-<a href="https://www.reddit.com/r/Database/comments/10y43s0/alternative_to_microsoft_access/">Reddit user</a>: "I can't speak for your specific need, but in general there's a <b>large need</b> for a smallish "departmental" intranet development tool that fills the niche of MS-Access but is web-enabled." </p>
+
+        <h2 class="m-Section-title">MS Access Migration</h2>
+
+<p class="m-Section-desc"><a href="https://jampyapplicationbuilder.pages.dev/conv/index.html">Migrate Here.</a> Of course, we are here to help with the process - <a href="contact.html">Contact Form.</a></p>
+
+<p class="m-Section-desc">Many businesses rely on Microsoft Access for managing their data, but as companies grow and demand for real-time access, collaboration, and scalability increases, Access's limitations become apparent. Traditional desktop-based Access databases can be challenging to share, maintain, and scale, especially in environments where teams need to collaborate remotely or require seamless integration with modern web applications.</p>
+
+<div class="m-Section-col col col-6">
+	<p class="m-Section-subTitle"><b>Moving</b> MS Access to the web addresses several business needs:</p>
+
+<ul class="m-Section-list">
+
+
+<li class="m-Section-listItem"><b>Improved Accessibility</b>: Web-based applications can be accessed from anywhere, on any device, facilitating remote work and collaboration.
+
+<li class="m-Section-listItem"><b>Scalability</b>: As business data grows, web-based solutions can handle larger volumes of data more efficiently than desktop applications.</li>
+<li class="m-Section-listItem"><b>Centralized Data</b>: A web-based system ensures that data is centralized and consistent across all users, reducing errors and improving version control.</li>
+<li class="m-Section-listItem"><b>Integration with Other Systems</b>: Web applications can more easily integrate with other business systems, such as CRM, ERP, or cloud services.</li>
+<li class="m-Section-listItem"><b>Reduced Maintenance</b>: Centralized web applications are easier to maintain, update, and secure, compared to individual desktop installations.</li>
+
+</ul>
+</div>
+
+<div class="m-Section-col col col-6">
+<p class="m-Section-subTitle"><b>Jam.py</b> is a powerful framework that can assist in this transition by providing a low-code, JS and Python-based environment that is well-suited for creating web applications similar to MS Access. With Jam.py, businesses can:</p>
+
+<ul class="m-Section-list">
+
+
+<li class="m-Section-listItem"><b>Migrate MS Access databases to a web-based platform</b> while preserving key functionalities.</li>
+<li class="m-Section-listItem"><b>Create web-based forms, reports, and views</b> similar to Access, allowing users to interact with the data in familiar ways.</li>
+<li class="m-Section-listItem"><b>Leverage built-in authentication and security</b> to manage access controls and protect sensitive data.</li>
+<li class="m-Section-listItem"><b>Easily deploy the solution on the cloud or on-premises</b>, providing flexibility based on business needs.</li>
+
+</ul>
+</div>
+</div>
+
+
+<p class="m-Section-desc">By using Jam.py, businesses can seamlessly move their Access databases to the web, unlocking enhanced collaboration, scalability, and integration opportunities while maintaining a user-friendly interface for non-technical users.</p>	
+   </div>
+ </div>
+	
+
+<div id="m_Tooling" class="m-Section m-Section--grid m-Section--tooling">
+  <div class="m-Body-contentWrapper subsection-tooling">
+    <div class="m-Section-row row" id="m_Intro">
+      <div class="col col-12 m-Section-col">
+        <h2 class="m-Section-title">DRY principle! Don't repeat yourself, do it once, do it well.</h2>
+        <p class="m-Section-desc">With Jam.py Databases Application 
+Builder, you can resolve a specific business problem. Out of the box Jam is 
+providing: fast access to underlying databases, security, 
+authentication, validation, calendars, multi languages, all of that with
+ minimum of coding needed. Being Python framework, it is extensible and 
+flexible.</p>
+      </div>
+    </div>
+    <div class="m-Section-row row" id="m_Develop">
+      <div class="col col-12 m-Section-col">
+          <div class="m-Media m-Media">
+            <div class="m-Media-graphic develop"></div>
+            <div class="m-Media-content">“All in the browser” framework</div>
+          </div>
+        <p class="m-Section-text">With Jam.py, you just need the browser! 
+Your productivity will sky rocket as you dig into the framework using 
+our code editor. Make changes in the editor, refresh the page and see 
+the results.</p>
+        <div class="m-Section-img m-Section-img--fill tooling-develop">
+          <img src="./assets/img/tooling-develop.png" alt="">
+        </div>
+        <div class="m-Section-row row">
+          <div class="m-Section-col col col-6">
+            <ul class="m-Section-list">
+
+              <li class="m-Section-listItem">Internet Browser IDE</li>
+              <li class="m-Section-listItem">Code Editor with Syntax Highlighting and Code Completion</li>
+              <li class="m-Section-listItem">No declarative options, you are in charge.</li>
+              <li class="m-Section-listItem">Instant WYSIWYG</li>
+              <li class="m-Section-listItem">Application lifecycle tracking.</li>
+            </ul>
+          </div>
+          <div class="m-Section-col col col-6">
+            <ul class="m-Section-list">
+              <li class="m-Section-listItem">SQL and stored procedures supported for major vendors.</li>
+              <li class="m-Section-listItem">Integrate any Python library with no contract lock-in and reduce cost instantly.</li>
+              <li class="m-Section-listItem">Bootstrap, JQuery, JS, all in here. Use it with no fuss and learning this massive libraries.</li>
+              <li class="m-Section-listItem">Create rich, informative reports, due to band-oriented report generation based on LibreOffice templates. </li>
+              <li class="m-Section-listItem">Mobile devices supported out of the box.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-Section-row row">
+          <div class="m-Section-col col col-6">
+            <p class="m-Section-subTitle">Event driven grids </p>
+            <img src="index2_files/screenshot-ig.jpg" alt="" class="m-Section-img m-Section-img--embed">
+            <p class="m-Section-text">Event driven grids enable you to easily manipulate data simply by clicking on a cell and editing its value.</p>
+            <ul class="m-Section-list">
+              <li class="m-Section-listItem">Event driven data-aware visual interface controls makes the framework flexible and powerful.</li>
+              <li class="m-Section-listItem">Edit your data in the grid, as you would in any Desktop spreadsheet application.</li>
+              <li class="m-Section-listItem">Create the master-detail 
+table with breeze, utilising templates for displaying, which is no more 
+than a copy/paste. Easy. Again, no declarative methods, the control is 
+with you as it should be.</li>
+            </ul>
+          </div>
+          <div class="m-Section-col col col-6">
+            <p class="m-Section-subTitle">jsCharts or any charting libraries</p>
+            <img src="index2_files/screenshot-charts.jpg" alt="" class="m-Section-img m-Section-img--embed">
+            <p class="m-Section-text">Locked-in with a vendor charting capabilities? Never again. Use free libraries as jsChart, at.al.</p>
+            <ul class="m-Section-list">
+              <li class="m-Section-listItem">Use the same charting capabilities on your mobile devices, once for all.</li>
+              <li class="m-Section-listItem">Visualise charts immediately after you create/import tables, with a few  lines of code. Simple and effective.</li>
+              <li class="m-Section-listItem">Analyzing/displaying BIG data? Add free Python lib's, build a Jam Web Form with parameters, execute on the server. Profit.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="m-Section-row row" id="m_Design">
+      <div class="col col-12 m-Section-col">
+        <div class="m-Media m-Media">
+          <div class="m-Media-graphic design"></div>
+          <div class="m-Media-content">Simple and effective UI with no fuss</div>
+        </div>
+        <p class="m-Section-text">Designed with the simplicity on mind, 
+based on strong Delphi foundation. There are no web widgets, no 
+dependencies on such. Yet, you can use CSS or JS and achieve fantastic 
+results with Jam. In small to medium organisation with no dedicated 
+developers, one can build an app based on requirements in no time with 
+no hustle of declarative frameworks.</p>
+        <div class="m-Section-design">
+          <span class="m-Section-designImg display-laptop hidden-xxs"><img src="./assets/img/screenshot-laptop.png" alt=""></span>
+          <span class="m-Section-designImg display-tablet hidden-xxs"><img src="./assets/img/screenshot-tablet.png" alt=""></span>
+          <span class="m-Section-designImg display-phone hidden-xxs"><img src="./assets/img/screenshot-phone.png" alt=""></span>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="m-Section-row row" id="m_Deploy">
+      <div class="col col-12 m-Section-col">
+        <div class="m-Media m-Media">
+          <div class="m-Media-graphic deploy"></div>
+          <div class="m-Media-content">Deploying an Jam.py application takes seconds. Literally.</div>
+        </div>
+        <p class="m-Section-text">There are only a few files to deploy 
+in the development/production environment. Comparing with some other 
+frameworks, with mega deployment or database dependencies, Jam is a 
+feather light.</p>
+
+        <div class="m-Section-row row">
+          <div class="m-Section-col col col-6">
+            <ul class="m-Section-list">
+              <li class="m-Section-listItem">Fast application export/import, easily transportable, kilobytes in size. </li>
+              <li class="m-Section-listItem">Develop on one database, deploy on the other. This is our promise to you. No database lock-in. Ever.</li>
+            </ul>
+          </div>
+          <div class="m-Section-col col col-6">
+            <ul class="m-Section-list">
+              <li class="m-Section-listItem">Scaling Jam.py application is extremely easy. Develop once, deploy anywhere.</li>
+                <li class="m-Section-listItem">Jam will deploy on Windows as well as Mac or Linux. Raspberry Pi? No worries.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="m-Section m-Section--oracle">
+  <div class="m-Body-contentWrapper" id="oracle">
+    <div class="m-Section-row row">
+      <div class="m-Section-col col col-12">
+        <span class="jam-logo"></span>
+        <h2 class="m-Section-title">Jam.py is Open source. No vendor lock-in. Free to use and distribute.</h2>
+        <p class="m-Section-desc">By using Jam.py Application Builder, 
+you will finally free your organisation of the vendor lock-in. Even 
+more, with the freely available utilities, you can move your expensive 
+database to the open source one leaving you with moving only the BI to 
+Python. Oracle Forms for example, can be moved in no time, the Jam.py 
+framework has Events to cover for the Forms logic. And, of course you 
+have the source code, which can be accommodated for your organisational 
+needs.</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+
+    
+
+    
+    
+  </div>
+  
+
+
+<script src="./assets/js/all.min.js"></script>
+
+</body>
+</html>
